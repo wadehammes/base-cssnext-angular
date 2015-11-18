@@ -14,9 +14,7 @@
     <!-- STYLE -->
     <link type="text/css" href="css/base.css" media="all" rel="stylesheet" />
 
-    <!-- SCRIPTS -->
-
-    <!-- Detection of Smart Browser script -->
+    <!-- FEATURE DETECTION -->
     <script type="text/javascript">
       if ('visibilityState' in document) {
         var doc = document.getElementsByTagName("html");
@@ -25,27 +23,20 @@
     </script>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
-
   </head>
-  <body>
+  <body ng-controller="welcomeCtrl">
 
-    <div class="container">
+  	<main class="main p2">
+  		<h1>Base CSS4</h1>
+  		<p>Go build something awesome.</p>
+  	</main>
 
-    	<main class="main p2">
-    		<h1>Base CSS4</h1>
-    		<p>Go build something awesome.</p>
-    	</main>
-      <!-- end main -->
+    <footer class="footer p2">
+      <input class="custom-input" ng-model="val" type="text" placeholder="Your name">
+      <p>Hello {{ val }}, welcome to Angular<p>
+    </footer>
 
-      <footer class="footer p2" ng-controller="welcomeCtrl">
-        <input class="custom-input" ng-model="val" type="text" placeholder="Your name">
-        <p>Hello {{ val }}, welcome to Angular<p>
-      </footer>
-      <!-- end footer -->
-
-    </div>
-    <!-- end container -->
-
+    <!-- LOAD APP JS -->
     <script type="text/javascript" src="js/app.js"></script>
   </body>
 </html>
