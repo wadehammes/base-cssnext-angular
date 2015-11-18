@@ -24,28 +24,28 @@ opn         = require('opn');
 =            Default Paths            =
 =====================================*/
 var devBase   = './assets';
-var themeBase = './app';
+var appBase = './app';
 
 /*=========================================
 =            Destination Paths            =
 =========================================*/
 var stylePathSrc     = devBase + '/css/base.css';
 var stylePathWatch   = devBase + '/css/**/*';
-var stylePathDest    = themeBase + '/css/';
+var stylePathDest    = appBase + '/css/';
 
 var scriptsPathSrc   = [devBase + '/js/_lib/**/*.js', devBase + '/js/_src/**/*.js', devBase + '/js/app.js'];
 var scriptsPathWatch = devBase + '/js/**/*.js';
-var scriptsPathDest  = themeBase + '/js/';
+var scriptsPathDest  = appBase + '/js/';
 
 var svgPathWatch     = devBase + '/svg/*.svg';
-var svgDest          = themeBase + '/svg';
+var svgDest          = appBase + '/svg';
 
 var imgPathWatch     = devBase + '/img/*';
-var imgDest          = themeBase + '/img';
+var imgDest          = appBase + '/img';
 
-var phpPath          = themeBase + '/**/*.php';
-var htmlPath         = themeBase + '/**/*.html';
-var htmlViewsPath    = themeBase + '/views/*.html';
+var phpPath          = appBase + '/**/*.php';
+var htmlPath         = appBase + '/**/*.html';
+var htmlViewsPath    = appBase + '/views/*.html';
 
 /*===============================
 =            Options            =
@@ -114,14 +114,14 @@ gulp.task('minify', function() {
       collapseWhitespace: true,
       removeComments: true
     }))
-    .pipe(gulp.dest(themeBase))
+    .pipe(gulp.dest(appBase))
     .pipe(livereload())
     .pipe(notify({ message: 'HTML views minified' }));
 });
 
 // Launch Server
 gulp.task('webserver', function() {
-  gulp.src(themeBase)
+  gulp.src(appBase)
     .pipe(webserver({
       host:             server.host,
       port:             server.port,
