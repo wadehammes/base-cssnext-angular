@@ -1,0 +1,8 @@
+/* Extend base input fields with custom properties */
+.custom-input {
+  border: 2px solid var(--blue);
+}
+
+.custom-input:focus {
+  outline: 0;
+}
